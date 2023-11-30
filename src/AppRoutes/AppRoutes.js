@@ -1,9 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
-import { createRoot } from "react-dom/client";
-import React from "react";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from '../Views/HomePage/HomePage';
+import MoviePage from '../Views/MoviePage/MoviePage';
 
-root.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
-);
+const AppRoutes = () => {
+    return (
+        <Routes>
+            <Route path='/' element={<HomePage/>} />
+            <Route path='/movie' element={<MoviePage/>} />
+            {/*<Route path='/search' element={<SearchPage/>} />*/}
+
+        </Routes>
+    );
+}
+
+export default AppRoutes;
