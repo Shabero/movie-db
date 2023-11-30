@@ -7,11 +7,11 @@ const Header = () => {
             <nav className="navbar navbar-dark ">
                 <div className="container-fluid justify-content-around">
                     <div className={'links'}>
-                        <Link to={'/'}  className='navbar-brand'>Главная</Link>
-                        <Link to={'/movie'} className='navbar-brand'>Фильмы</Link>
+                        <Link to={'/'}  className='navbar-brand'>Home</Link>
+                        <Link to={'/movie'} className='navbar-brand'>Movies</Link>
                     </div>
                     <div className={'search-link'}>
-                        <Link to={'/search'} className='navbar-brand'>Поиск</Link>
+                        <Link to={'/search'} className='navbar-brand'>Seacrh</Link>
                     </div>
                 </div>
             </nav>

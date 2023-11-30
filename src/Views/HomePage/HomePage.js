@@ -9,7 +9,7 @@ const HomePage = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        axios(`${BASE_URL}discover/movie?language=ru-RU&api_key=${API_KEY}`)
+        axios(`${BASE_URL}discover/movie?language=en-EN&api_key=${API_KEY}`)
             .then(({data})  => setMovies(data.results))
     },[])
 
