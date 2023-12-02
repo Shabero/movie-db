@@ -17,7 +17,7 @@ const HomePage = () => {
     return (
         <Layout>
             <Carousel movies={movies} />
-            <div className={'container'}>
+            <div className={'container mt-5'}>
                 <MovieList  movies={movies}/>
             </div>
         </Layout>

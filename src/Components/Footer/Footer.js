@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './styles.css'
-import Logo from '../Assets/logo.png';
+import {Link} from "react-router-dom";
+import Logo from "../Assets/logo.png";
 
-
-const Header = () => {
+const Footer = () => {
     return (
-        <header className={"header p-3 bg-opacity-75  bg-dark fixed-top "}>
+        <footer className={'footer'} className={"p-3 bg-dark fixed-end"}>
             <nav className="navbar navbar-dark ">
                 <div className="container-fluid justify-content-around">
                     <div className={'links'}>
@@ -16,14 +14,13 @@ const Header = () => {
                         <Link to={'/'}  className='navbar-brand'>Home</Link>
                         <Link to={'/movie'} className='navbar-brand'>Movies</Link>
                     </div>
-                    <div className={'search-link'}>
-                        <Link to={'/search'} className='navbar-brand'>Search</Link>
+                    <div>
+                        <p className='navbar-brand'>Phone Number <span >+996708504805</span></p>
                     </div>
                 </div>
             </nav>
-
-        </header>
+        </footer>
     );
 };
 
-export default Header;
+export default Footer;
