@@ -1,10 +1,8 @@
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { BACKDROP_URL } from '../../config/config'
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
@@ -30,7 +28,7 @@ export default function Carousel({movies}) {
                 className="mySwiper"
             >
                 {
-                    movies.map(movie =>
+                    movies.filter(el => el.backdrop_path).map(movie =>
                         <SwiperSlide>
                             <img
                                src={BACKDROP_URL + movie.backdrop_path}  alt={''}

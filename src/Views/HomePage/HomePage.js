@@ -4,6 +4,7 @@ import {BASE_URL,API_KEY} from '../../config/config'
 
 import MovieList from '../../Components/MovieList/MovieList'
 import Carousel from '../../Components/Carousel/Carousel'
+import Layout from "../../Components/Layout/Layout";
 
 const HomePage = () => {
     const [movies, setMovies] = useState([])
@@ -14,12 +15,12 @@ const HomePage = () => {
     },[])
 
     return (
-        <div>
+        <Layout>
             <Carousel movies={movies} />
             <div className={'container'}>
                 <MovieList  movies={movies}/>
             </div>
-        </div>
+        </Layout>
     );
 };
 
