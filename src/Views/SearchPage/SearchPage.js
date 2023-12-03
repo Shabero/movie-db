@@ -1,32 +1,42 @@
 import React, {useState} from 'react';
-import Header from "../../Components/Header/Header";
+import Layout from "../../Components/Layout/Layout";
 import axios from "axios";
-import CocktailList from "../../Components/MovieList/MovieList";
+import {BACKDROP_URL} from "../../config/config";
+import FilmCard from "../../Components/FilmCard/FilmCard";
+import MovieList from "../../Components/MovieList/MovieList";
+
+
 
 const SearchPage = () => {
     const [value, setValue] = useState([])
-    const [name, setName] = useState('')
-    const searchDrinks = () => {
-        axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
-            .then(({data}) => setValue(data.drinks))
+    const [searchResults, setSearchResults] = useState('')
+
+    const searchMovies = () => {
+        axios('https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US')
+            .then(({data})  => setValue(data.movie))
     }
     console.log(value)
+
     const handleGetValue = (e) => {
-        setName(e.target.value)
-        console.log(name)
+        setSearchResults(e.target.value)
+        console.log(searchResults)
     }
+
+
+
     return (
-        <>
-            <Header />
-            <div className={'container'}>
-                <h2 className={'p-4'}><b>Search</b></h2>
-                <div className={"d-flex align-items-center p-4"}>
-                    <input type="text" className={"p-2 rounded-3 border-dark border-1"} onChange={handleGetValue}/>
-                    <button className={"p-2 btn btn-outline-dark border-2"} onClick={searchDrinks}>Search</button>
-                </div>
-                <CocktailList drinks={value} />
+        <Layout>
+            <div className={'movie-page'}
+                 style={{
+                     backgroundImage: `url(${BACKDROP_URL}${movie.backdrop_path})`,
+                 }}>
             </div>
-        </>
-    )
-}
+            <div className="container movie-wrapper">
+                <FilmCard movie={movie} />
+                <MovieList movies={value} />
+            </div>
+        </Layout>
+    );
+};
+
 export default SearchPage;

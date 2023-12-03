@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import FilmCard from "../FilmCard/FilmCard";
 
-import {BACKDROP_URL, IMAGE_URL} from '../../config/config'
+import {BACKDROP_URL} from '../../config/config'
 
-// import IMDblogo from '../Assets/IMDb-vote.png'
 
 
 import 'swiper/css';
@@ -14,6 +14,7 @@ import 'swiper/css/autoplay'
 import '../../Components/Carousel/style.css';
 
 import { EffectFade, Navigation, Autoplay } from 'swiper/modules';
+
 
 export default function Carousel({movies}) {
     return (
@@ -33,29 +34,13 @@ export default function Carousel({movies}) {
                 {
                     movies.filter(el => el.backdrop_path).map(movie =>
                         <SwiperSlide>
-                            <div className="carousel-img"
+                            <div className={"carousel-img"}
                                 style={{
-                                    background: `url(${BACKDROP_URL + movie.backdrop_path})`,
-                                    backgroundSize: "cover",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    padding: '150px 300px',
-
+                                    backgroundImage: `url(${BACKDROP_URL}${movie.backdrop_path})`
                                 }}
                             >
-                                <div className={'carousel-card'} >
-                                    <img className={'carousel-poster'}
-                                        src={IMAGE_URL + movie.poster_path}  alt={''}
-                                    />
-                                    <div>
-                                        <h3 className={'fs-1'}>{movie.title}</h3>
-                                        {/*<img src={IMDblogo} alt=""/>*/}
-                                        <p className={'fs-4'}>{movie.vote_average}</p>
-                                        <p className={'fs-4'}>{movie.overview}</p>
-                                    </div>
-                                </div>
+                                <FilmCard movie={movie} />
                             </div>
-
                         </SwiperSlide>
                     )
                 }
