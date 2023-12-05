@@ -33,7 +33,7 @@ export default function Carousel({movies}) {
             >
                 {
                     movies.filter(el => el.backdrop_path).map(movie =>
-                        <SwiperSlide>
+                        <SwiperSlide key={movie.id}>
                             <div className={"carousel-img"}
                                 style={{
                                     backgroundImage: `url(${BACKDROP_URL}${movie.backdrop_path})`
