@@ -22,13 +22,19 @@ const MovieList = ({movies}) => {
                         >
                             <img src={`${IMAGE_URL}${movie.poster_path}`} className={'movie-img '} alt=""/>
                             <h3 className={'fs-4 pt-3'}>{movie.title}</h3>
-                                <div className={'d-flex'}>
-                                    <img src={IMDblogo} style={{width: '30px', height: '30px'}} alt=""/><p className={'fs-5 d-flex'}>{movie.vote_average}</p>
+                                <div className={'d-flex logo-imdb'}>
+                                    <img src={IMDblogo} style={{width: '30px', height: '30px'}} alt=""/>
+                                    <div>
+                                        <p className={'fs-5 d-flex'}>{movie.vote_average}</p>
+                                    </div>
+
                                 </div>
                             <p>{movie.release_date}</p>
+
                         </div>
                     </div>
                 )
+
             }
         </div>
     );

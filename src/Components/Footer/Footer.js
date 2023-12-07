@@ -4,7 +4,7 @@ import Logo from "../Assets/logo.png";
 
 const Footer = () => {
     return (
-        <footer className={'footer'} className={"p-3 bg-dark fixed-end"}>
+        <footer className={"footer p-3 bg-dark fixed-end"}>
             <nav className="navbar navbar-dark ">
                 <div className="container-fluid justify-content-around">
                     <div className={'links'}>
