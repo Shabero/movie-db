@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css'
+import './style.css'
 import axios from "axios";
 import {API_KEY, BASE_URL} from "../../config/config";
 import Logo from '../Assets/logo.png';
